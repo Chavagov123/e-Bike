@@ -4,7 +4,7 @@ import mysql.connector
 mydb = mysql.connector.connect(
     host="localhost",
     user="root",
-    password="Bindu@005",
+    password="password",
     database="e_bike"
 )
 
@@ -96,3 +96,4 @@ def delete_data(dealer_name):
     
 
 '''
+
