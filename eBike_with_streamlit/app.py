@@ -1,9 +1,12 @@
 import streamlit as st
+import atexit
 from create import create
 from read import read
 from update import update
 from delete import delete
 from database import create_table, close
+
+atexit.register(close)
 
 def main():
     st.title("eBike App")
@@ -33,7 +36,3 @@ def main():
 
 if __name__ == '__main__':
     main()
-    
-
-
-

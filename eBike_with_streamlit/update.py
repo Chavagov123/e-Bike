@@ -29,11 +29,12 @@ def update():
             new_dealer_id = st.text_input("ID:", dealer_id)
             new_dealer_name = st.text_input("Name:", dealer_name)
         with col2:
-            new_dealer_city = st.selectbox(dealer_city, ["Bangalore", "Chennai", "Mumbai"])
+            cities = ["Bangalore", "Chennai", "Mumbai"]
+            new_dealer_city = st.selectbox("City", cities, index=cities.index(dealer_city))
             new_dealer_pin = st.text_input("Pin Code:", dealer_pin)
         new_dealer_street = st.text_input("Street Name:", dealer_street)
         if st.button("Update Dealer"):
-            edit_dealer_data(new_dealer_id, new_dealer_name, new_dealer_city, new_dealer_pin, new_dealer_street, dealer_id, dealer_name, dealer_city, dealer_pin, dealer_street)
+            edit_dealer_data(new_dealer_id, new_dealer_name, new_dealer_city, new_dealer_pin, new_dealer_street, dealer_id)
             st.success("Successfully updated:: {} to ::{}".format(dealer_name, new_dealer_name))
 
     result2 = view_all_data()
